@@ -1,0 +1,126 @@
+
+  /* Container */
+  .register-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    height: 100vh;
+    
+  }
+  
+  /* Register Box */
+  .register {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+  
+  /* Heading */
+  .register-heading {
+    font-size: 1.8rem;
+    color: #079992;
+    margin-bottom: 1rem;
+  }
+  
+  /* Form Styling */
+  .register-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  label {
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: black;
+    display: block;
+  }
+  
+  /* Input Fields */
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border 0.3s ease-in-out;
+  }
+  
+  .register-box input:focus {
+    border-color: #079992;
+    box-shadow: 0px 0px 5px rgba(7, 153, 146, 0.5);
+  }
+  
+  /* Submit Button */
+  button {
+    width: 100%;
+    padding: 12px;
+    background: #079992;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: #023835;
+  }
+
+  .register-link{
+    width: 60%;
+    padding: 12px;
+    background: #079992;
+    border: none;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    box-sizing: border-box;
+    transition: background 0.3s;
+  }
+  .register-link:hover{
+    background: #025b57;
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .register {
+      padding: 1.5rem;
+      width: 90%;
+    }
+  
+    .register-heading {
+      font-size: 1.5rem;
+    }
+  
+    input {
+      padding: 8px;
+      font-size: 0.9rem;
+    }
+  
+    button {
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+    .register-link{
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+  }
+  

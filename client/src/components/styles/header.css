@@ -1,0 +1,147 @@
+/* Header Container */
+.header-area {
+    background-color: #2e867e; /* Darker teal */
+    padding: 15px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: fixed; /* Fixed position */
+    top: 0; /* Stay at the top */
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Make sure it stays on top of other elements */
+    /* width: 100%; Ensure it spans the full width */
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+    padding-top: 20px; /* Ensure padding from the top */
+  }
+  
+  /* Main Header */
+  .header {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Adjusted padding for better layout */
+  }
+  
+  /* Navigation */
+  nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Align Logo & Title in a Row */
+  .header-logo {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adds space between the image and text */
+  }
+  
+  /* Logo Image */
+  .header-logo img {
+    height: 50px; /* Adjust the logo size */
+    width: auto;
+    border-radius: 20px;
+  }
+  
+  /* Title Styling */
+  .header-logo h1 {
+    font-size: 22px;
+    color: white;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  /* Navigation Menu */
+  .header-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .header-menu ul li {
+    display: inline-block;
+  }
+  
+  .header-menu ul li a{
+    text-decoration: none;
+    color: #ffffff; /* White text */
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .header-menu ul li a:hover {
+    color: #e86a3a; /* Orange hover effect */
+  }
+  .header-menu ul li .button-link {
+    display: inline-block;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .button-link:hover {
+    color: #e86a3a; 
+  }
+  
+  /* Add padding to the body content to avoid overlap with the fixed header */
+   /* Adjust based on the header height */
+  body {
+    padding-top: 70px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    /* Tablet - Stack Logo and Menu */
+    .header {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .header-menu ul {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    /* Mobile - Further adjustments */
+    .header-logo h1 {
+      font-size: 18px; /* Smaller title on mobile */
+    }
+  
+    .header-menu ul {
+      flex-direction: column;
+      text-align: center;
+      gap: 15px;
+      padding-top: 10px;
+    }
+  
+    .header-menu ul li {
+      padding: 5px 0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* Small devices - Stack and center everything */
+    .header-logo h1 {
+      font-size: 16px; /* Smaller title on smaller devices */
+    }
+  
+    .header-menu ul {
+      gap: 10px;
+    }
+  
+    .header-menu ul li a {
+      font-size: 14px; /* Smaller font for smaller devices */
+    }
+  }
+  

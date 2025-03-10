@@ -53,7 +53,7 @@ export const Login = async (req, res) => {
       SECRET_KEY,
       { expiresIn: "1h" }
     );
-    return res.status(201).json({ message: "User Login Successfully" });
+    return res.status(201).json({ message: "User Login Successfully", token });
   } catch (error) {
     return res.status(500).json({ message: "User not Login" });
   }

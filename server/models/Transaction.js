@@ -1,26 +1,37 @@
 import mongoose, { Mongoose } from "mongoose";
-const TransactionSchema = new mongoose.Schema({
-    userId:{
-        tyep: mongoose.Schema.Types.ObjectId,
-        ref:'user',
-        required: [true, 'User Id is required'],
+const TransactionSchema = new mongoose.Schema(
+  {
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: [true, "User Id is required"],
     },
-    amount:{
-        type:Number,
-        required:[true,'Amount is required'],
-        min:[0.01, 'Amount must be greater than Zero']
+    amount: {
+      type: Number,
+      required: [true, "Amount is required"],
+      min: [0.01, "Amount must be greater than Zero"],
     },
-    type:{
-        type:String,
-        enum:['deposit','withdrow'],
-        required:[true, 'transaction is required']
+    type: {
+      type: String,
+      enum: ["deposit", "withdrow", "transfer"],
+      required: [true, "transaction is required"],
     },
-    description:{
-        type:String,
-        required:[true,'Description is required'],
-        trim: true,
-        minlength:[200,'Must be within 200 character']
-    }
-},{timestamps: true});
+    date: {
+      type: Date,
+      default: Date.now,
+    },
+    description: {
+      type: String,
+      required: [true, "Description is required"],
+      trim: true,
+      default: "",
+      maxlength: [200, "Must be within 200 character"],
+    },
 
-const transaction = mongoose.model('Transaction', TransactionSchema);
+    targetAccount: { type: mongoose.Schema.Types.ObjectId, ref: "User" }, // For transfer
+  },
+  { timestamps: true }
+);
+
+const Transaction = mongoose.model("Transaction", TransactionSchema);
+export default Transaction;
