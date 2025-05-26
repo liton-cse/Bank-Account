@@ -32,7 +32,7 @@ const Header = () => {
       <div className="header">
         <nav>
           <div className="header-logo">
-            <img src="logo.jpg" alt="logo" />
+            <img src="/logo.jpg" alt="logo" />
             <h1>Bank Management</h1>
           </div>
 
