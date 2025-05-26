@@ -1,22 +1,27 @@
 import React, { useState } from "react";
-import "../styles/register.css";
+import "../../styles/register.css";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../../context/AuthContext";
 
 const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [avatar,setAvatar] = useState(null);
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const { register } = useAuth();
 
-  const handleSubbmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     try {
-      const result = await register({ name, email, password });
-      console.log(result);
+      const formData = new FormData();
+      formData.append("name", name);
+      formData.append("email", email);
+      formData.append("password", password);
+      formData.append("avatar", avatar); // appending file
+      const result = await register(formData);
       if (result.success) {
         navigate("/login");
       } else {
@@ -32,7 +37,7 @@ const Register = () => {
         <h1 className="register-heading">Sign Up</h1>
         <div className="register-box">
           {error && <p style={{ color: "red" }}>{error}</p>}
-          <form onSubmit={handleSubbmit}>
+          <form onSubmit={handleSubmit}>
             <label htmlFor="fullname">Name</label>
             <input
               type="text"
@@ -63,6 +68,16 @@ const Register = () => {
               placeholder="Enter your password"
               required
               onChange={(e) => setPassword(e.target.value)}
+            />
+           <label htmlFor="avatar">Image</label>
+            <input
+              type="file"
+              id="avatar"
+              name="avatar"
+              accept="image/*"
+              placeholder="Enter your password"
+              required
+              onChange={(e) => setAvatar(e.target.files[0])}
             />
             <button type="submit">Register</button>
           </form>

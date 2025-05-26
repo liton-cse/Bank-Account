@@ -6,6 +6,11 @@ const TransactionSchema = new mongoose.Schema(
       ref: "User",
       required: [true, "User Id is required"],
     },
+    receiveId: {
+      type: String,
+      required: true,
+      trim: true,
+    },
     amount: {
       type: Number,
       required: [true, "Amount is required"],

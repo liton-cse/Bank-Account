@@ -11,6 +11,7 @@ export const authMiddleware = async (req, res, next) => {
   }
 
   try {
+    // console.log(SECRET_KEY);
     const decoded = jwt.verify(token, SECRET_KEY);
     // console.log("Decoded Token:", decoded); // Log decoded token
     req.user = await User.findById(decoded.userId).select("password");

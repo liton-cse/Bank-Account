@@ -1,0 +1,116 @@
+/* Container for the entire component */
+.transfer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+    
+  }
+  
+  /* Card styling */
+  .transfer-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    max-width: 300px;
+    width: 100%; 
+  }
+  
+  /* Title styling */
+  .transfer-title {
+    font-size: 1.8rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Form styling */
+  .transfer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  /* Form group styling */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  /* Label styling */
+  .form-label {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  /* Input styling */
+  .form-input {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-input:focus {
+    border-color: #079992;
+    box-shadow: 0px 0px 5px rgba(7, 153, 146, 0.5);
+  }
+  
+  /* Button styling */
+  .transfer-button {
+    padding: 0.8rem;
+    background-color: #079992;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .transfer-button:hover {
+    background-color: #023835;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .transfer-card {
+      padding: 1.5rem;
+    }
+  
+    .transfer-title {
+      font-size: 1.5rem;
+    }
+  
+    .form-input {
+      padding: 0.7rem;
+    }
+  
+    .transfer-button {
+      padding: 0.7rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .transfer-card {
+      padding: 1rem;
+      margin: 2rem 1rem 0rem;
+    }
+  
+    .transfer-title {
+      font-size: 1.3rem;
+    }
+  
+    .form-input {
+      padding: 0.6rem;
+    }
+  
+    .transfer-button {
+      padding: 0.6rem;
+    }
+  }

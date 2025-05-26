@@ -1,0 +1,115 @@
+.withdrow-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    padding: 20px;
+}
+.withdrow{
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width:300px;
+    width: 100%;
+}
+.withdrow-header{
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color:  #079992;
+    text-align: center;
+}
+
+.withdrow form{
+    display: flex;
+    flex-direction: column;
+}
+.withdrow label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 10px;
+  }
+  
+  .withdrow input[type="number"] {
+    padding: 12px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333333;
+    outline: none;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .withdrow input[type="number"]:focus {
+    border-color: #079992;
+    box-shadow: 0px 0px 5px rgba(7, 153, 146, 0.5);
+  }
+  
+  .withdrow input[type="number"]::placeholder {
+    color: #aaaaaa;
+  }
+  
+  .withdrow button {
+    padding: 12px;
+    background-color: #079992;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .withdrow button:hover {
+    background-color: #023835;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .withdrow {
+      padding: 20px;
+    }
+  
+    .withdrow label {
+      font-size: 16px;
+    }
+  
+    .withdrow input[type="number"] {
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    .withdrow button {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .withdrow-area {
+      padding: 10px;
+    }
+  
+    .withdrow {
+      padding: 15px;
+      max-width: 250px;
+    }
+  
+    .withdrow label {
+      font-size: 14px;
+    }
+  
+    .withdrow input[type="number"] {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    .withdrow button {
+      font-size: 16px;
+      padding: 8px;
+    }
+  }

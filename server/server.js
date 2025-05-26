@@ -9,15 +9,30 @@ import adminRoutes from "./routes/adminRoute.js";
 const app = express();
 // middleware...
 app.use(express.json());
-app.use(cors());
+const allowedOrigins = [
+  'http://localhost:5173',
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
 app.use(express.urlencoded({ extended: true }));
 // connected database..
 connectDB();
+app.use("/uploads", express.static("uploads"));
 
 // Routing...
 app.use("/auth", authRoute);
 app.use("/admin", adminRoutes);
 app.use("/transaction", transectionRoute);
 app.listen(PORT, () => {
-  console.log(`Server is running on ${PORT}`);
+  console.log(`✅ Server is running on ${PORT}`);
 });

@@ -1,8 +1,54 @@
 /* General styles */
 body {
     font-family: Arial, sans-serif;
-    
     background-color: #38ada9;
     margin: 0;
-    padding: 0;
   }
+
+
+  /* Adding the taost Css property in below...... */
+
+/* Custom Toast Container */
+.Toastify__toast-container {
+  width: 100%;
+  max-width: 400px; /* Limit the width for better readability */
+  font-family: Arial, sans-serif;
+}
+
+/* Success Toast */
+.Toastify__toast--success {
+  background-color: #4CAF50 !important; /* Custom background color */
+  color: white !important; /* Text color */
+  border-radius: 8px !important; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important; /* Subtle shadow */
+}
+
+/* Error Toast */
+.Toastify__toast--error {
+  background-color: #ff6b6b !important; /* Custom background color */
+  color: white !important; /* Text color */
+  border-radius: 8px !important; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important; /* Subtle shadow */
+}
+
+/* Progress Bar */
+.Toastify__progress-bar {
+  background-color: rgba(255, 255, 255, 0.5) !important; /* Semi-transparent white */
+}
+
+/* Close Button */
+.Toastify__close-button {
+  color: white !important; /* White close button */
+}
+
+/* Responsive Design for Toast */
+@media (max-width: 480px) {
+  .Toastify__toast-container {
+    width: 90%; /* Full width on small screens */
+    margin: 0 auto; /* Center the toast */
+  }
+
+  .Toastify__toast {
+    margin-bottom: 10px; /* Add space between toasts */
+  }
+}

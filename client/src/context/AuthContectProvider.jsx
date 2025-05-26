@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { AuthContext } from "./AuthContext"; // Import AuthContext from the new file
 import { register, login as loginUser, logout } from "./authFunction";
+import {
+  deposit,
+  withdrow,
+  transferMoney,
+  history,
+  latestHistory,
+} from "./TransactionFunction";
 
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const checkUser = () => {
-      const userStored = localStorage.getItem("user");
-      if (userStored) {
-        setUser(JSON.parse(userStored));
+      const userToken = localStorage.getItem("token");
+      if (userToken) {
+        setUser(userToken);
       }
       setLoading(false);
     };
@@ -35,7 +42,19 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, register, handleLogin, handleLogout }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        register,
+        handleLogin,
+        handleLogout,
+        deposit,
+        withdrow,
+        transferMoney,
+        history,
+        latestHistory,
+      }}
+    >
       {!loading && children}
     </AuthContext.Provider>
   );

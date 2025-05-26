@@ -1,0 +1,121 @@
+/* General Styles */
+.deposit-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    padding: 20px;
+  }
+
+  .deposit {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 300px;
+    width: 100%;
+  }
+  .deposit-header{
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #079992;
+    text-align: center;
+  }
+  .deposit form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .deposit label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 10px;
+  }
+  
+  .deposit input[type="number"] {
+    padding: 12px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333333;
+    outline: none;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .deposit input[type="number"]:focus {
+    border-color: #079992;
+    box-shadow: 0px 0px 5px rgba(7, 153, 146, 0.5);
+  }
+  
+  .deposit input[type="number"]::placeholder {
+    color: #aaaaaa;
+  }
+  
+  .deposit button {
+    padding: 12px;
+    background-color: #079992;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .deposit button:hover {
+    background-color: #023835;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .deposit {
+      padding: 20px;
+    }
+  
+    .deposit label {
+      font-size: 16px;
+    }
+  
+    .deposit input[type="number"] {
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    .deposit button {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .deposit-area {
+      padding: 10px;
+    }
+  
+    .deposit {
+      padding: 15px;
+      max-width: 250px;
+    }
+  
+    .deposit label {
+      font-size: 14px;
+    }
+  
+    .deposit input[type="number"] {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    .deposit button {
+      font-size: 16px;
+      padding: 8px;
+    }
+  }
+
+
+
+ 

@@ -1,147 +1,208 @@
-/* Header Container */
+/* Ensure body content does not overlap with the fixed header */
+body {
+  padding-top: 80px; /* Adjust based on the header height */
+}
+
+/* 🌟 Header Container */
 .header-area {
-    background-color: #2e867e; /* Darker teal */
-    padding: 15px 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    position: fixed; /* Fixed position */
-    top: 0; /* Stay at the top */
-    left: 0;
-    right: 0;
-    z-index: 1000; /* Make sure it stays on top of other elements */
-    /* width: 100%; Ensure it spans the full width */
-    transition: all 0.3s ease-in-out; /* Smooth transition */
-    padding-top: 20px; /* Ensure padding from the top */
-  }
-  
-  /* Main Header */
-  .header {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px; /* Adjusted padding for better layout */
-  }
-  
-  /* Navigation */
-  nav {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  /* Align Logo & Title in a Row */
-  .header-logo {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Adds space between the image and text */
-  }
-  
-  /* Logo Image */
-  .header-logo img {
-    height: 50px; /* Adjust the logo size */
-    width: auto;
-    border-radius: 20px;
-  }
-  
-  /* Title Styling */
-  .header-logo h1 {
-    font-size: 22px;
-    color: white;
-    font-weight: bold;
-    margin: 0;
-  }
-  
-  /* Navigation Menu */
+  background-color: #2e867e; /* Darker teal */
+  padding: 15px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: fixed; /* Fixed position */
+  top: 0; /* Stay at the top */
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Make sure it stays on top of other elements */
+  transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Main Header */
+.header {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; /* Adjusted padding for better layout */
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Align Logo & Title in a Row */
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Adds space between the image and text */
+}
+
+/* Logo Image */
+.header-logo img {
+  height: 50px; /* Adjust the logo size */
+  width: auto;
+  border-radius: 10px;
+}
+
+/* Title Styling */
+.header-logo h1 {
+  font-size: 22px;
+  color: white;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* 🌟 Hamburger Menu */
+.menu-icon {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  position: relative;
+  z-index: 1100;
+}
+
+.menu-icon span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: white;
+  transition: 0.4s;
+  border-radius: 5px;
+}
+
+/* Menu icon animation */
+.menu-icon .open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-icon .open:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon .open:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* 🌟 Navigation Menu */
+.menu-list {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  align-items: center;
+}
+
+.menu-list li {
+  display: inline-block;
+}
+
+.menu-list li a,
+.menu-list li .button-link {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.menu-list li a:hover,
+.menu-list li .button-link:hover {
+  color: #e86a3a; /* Orange hover effect */
+}
+
+.menu-list li .button-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* 🌟 Responsive Styles */
+@media screen and (max-width: 1024px) {
+  /* Tablet - Adjustments */
   .header-menu ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+    gap: 15px;
   }
-  
-  .header-menu ul li {
-    display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+  /* Mobile - Hide desktop menu and show hamburger */
+  .menu-icon {
+    display: flex; /* Show hamburger menu */
   }
-  
-  .header-menu ul li a{
-    text-decoration: none;
-    color: #ffffff; /* White text */
-    font-size: 18px;
-    font-weight: bold;
-    transition: color 0.3s ease-in-out;
+
+  .menu-list {
+    display: none; /* Hide desktop menu */
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 200px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 10px 0;
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+    transform: translateY(-10px);
   }
-  
-  .header-menu ul li a:hover {
+
+  .menu-list.show {
+    display: flex; /* Show mobile menu */
+    flex-direction: column;
+    text-align: center;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .menu-list li {
+    padding: 5px 0;
+    
+  }
+
+  .menu-list li a,
+  .menu-list li .button-link {
+    color: #2e867e; /* Dark teal for mobile menu */
+  }
+
+  .menu-list li a:hover,
+  .menu-list li .button-link:hover {
     color: #e86a3a; /* Orange hover effect */
+
   }
-  .header-menu ul li .button-link {
-    display: inline-block;
-    background: none;
-    border: none;
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 0;
-    transition: color 0.3s ease-in-out;
-  }
-  
-  .button-link:hover {
-    color: #e86a3a; 
-  }
-  
-  /* Add padding to the body content to avoid overlap with the fixed header */
-   /* Adjust based on the header height */
+
+  /* Adjust body padding for mobile */
   body {
     padding-top: 70px;
   }
-  
-  /* Responsive Design */
-  @media (max-width: 1024px) {
-    /* Tablet - Stack Logo and Menu */
-    .header {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .header-menu ul {
-      flex-direction: column;
-      text-align: center;
-      gap: 10px;
-    }
+}
+
+@media screen and (max-width: 480px) {
+  /* Small devices - Further adjustments */
+  .header-logo h1 {
+    font-size: 18px; /* Smaller title */
   }
-  
-  @media (max-width: 768px) {
-    /* Mobile - Further adjustments */
-    .header-logo h1 {
-      font-size: 18px; /* Smaller title on mobile */
-    }
-  
-    .header-menu ul {
-      flex-direction: column;
-      text-align: center;
-      gap: 15px;
-      padding-top: 10px;
-    }
-  
-    .header-menu ul li {
-      padding: 5px 0;
-    }
+
+  .menu-list {
+    width: 180px; /* Smaller menu for small devices */
   }
-  
-  @media (max-width: 480px) {
-    /* Small devices - Stack and center everything */
-    .header-logo h1 {
-      font-size: 16px; /* Smaller title on smaller devices */
-    }
-  
-    .header-menu ul {
-      gap: 10px;
-    }
-  
-    .header-menu ul li a {
-      font-size: 14px; /* Smaller font for smaller devices */
-    }
+
+  .menu-list li a,
+  .menu-list li .button-link {
+    font-size: 14px; /* Smaller font */
   }
-  
+
+  .menu-list li a:hover,
+  .menu-list li .button-link:hover {
+    color: #e86a3a; /* Orange hover effect */
+    
+  }
+
+  /* Adjust body padding for very small devices */
+  body {
+    padding-top: 60px;
+  }
+}

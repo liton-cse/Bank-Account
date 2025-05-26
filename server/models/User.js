@@ -25,6 +25,10 @@ const UserSchema = new mongoose.Schema(
       default: 0,
       min: [0, "Balance can not be nagetive"],
     },
+    avatar:{
+      type: String,
+      required:true,
+    },
     role: {
       type: String,
       enum: ["user", "admin"],
